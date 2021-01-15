@@ -16,7 +16,8 @@
 */
 
 function count(num){
-    // Code here
+    let count = num;
+    return () => ++count;
 };
 
 
@@ -39,15 +40,19 @@ var newClosure = count(5);
   
 */
  
-// Code here
+function greeting(name)
+{
+  let gName = name;
+  return (greeting) => `${greeting} ${gName}`;
+}
     
     
 
 
 // After you have created the greeting function above, uncomment the code below, but do not edit it
 
-// const greetingClosure = greeting('Henry');
-// let greet = greetingClosure('Hello')
+const greetingClosure = greeting('Henry');
+let greet = greetingClosure('Hello')
     
 
 
@@ -63,7 +68,16 @@ var newClosure = count(5);
 
 */
 
-// Code here
+function calculatorCreator(){
+  let num = 0;
+
+    return{
+      add: (b) => num += b,
+      subtract: (b) => num -= b,
+      multiply: (b) => num *= b,
+      divide: (b) => num /= b,
+    }
+}
 
 
 
@@ -74,7 +88,13 @@ var newClosure = count(5);
   
 */
 
-// Code here
+class Puppy{
+  constructor(happiness, energy, behavior) {
+    this.happiness = happiness;
+    this.energy = energy;
+    this.behavior = behavior;
+  }
+}
 
 
 
@@ -87,7 +107,20 @@ var newClosure = count(5);
 
 */
 
-// Code here
+class Car {
+  constructor(manufacturer, year) {
+    this.manufacturer = manufacturer;
+    this.year = year;
+  }
+
+  displayManufacturer() {
+    return this.manufacturer;
+  }
+
+  displayYear() {
+    return this.year;
+  }
+}
 
 
 
@@ -101,5 +134,24 @@ var newClosure = count(5);
     - takesNap: This method should decrease energy by 45 and increase behavior by 15
 
 */
+let larry = new Puppy(100, 100, 100);
+let moe = new Puppy(50, 50, 50);
+let curly = new Puppy(70, 70, 70);
 
-// Code here
+class Panda {
+  constructor(happiness, energy, behavior){
+    this.happiness = happiness;
+    this.energy = energy;
+    this.behavior = behavior;
+  }
+    getsTreat() {
+      this.happiness += 20;
+      return this.happiness;
+    }
+
+    takesNap() {
+      this.energy -= 45;
+      this.behavior += 15;
+    }
+  
+}
